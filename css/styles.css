@@ -37,8 +37,8 @@ button {
 }
 
 ::selection {
-  background-color: var(--white);
-  color: var(--black);
+  background-color: rgb(255 255 255 / 10%);
+  color: var(--white);
 }
 
 /* font */
@@ -70,6 +70,12 @@ body {
   height: 100vh;
   background-color: var(--black);
   color: var(--white);
+}
+
+@media (max-width: 400px) {
+  body {
+    padding: 25px;
+  }
 }
 
 #letters-container {
@@ -125,18 +131,13 @@ button#play-again img {
     brightness(89%) contrast(96%);
 }
 
-@media (max-width: 720px) {
-  button#play-again img {
-    width: 1.5em;
-  }
-}
-
 button#play-again:disabled {
   cursor: auto;
 }
 
 button#play-again span,
-h1 {
+h1,
+p#help span {
   letter-spacing: 2px;
   /* gradient text */
   background: -webkit-linear-gradient(left, var(--primary), var(--secondary));
@@ -156,7 +157,11 @@ button#play-again span {
 
 h1 {
   text-transform: uppercase;
-  font-size: clamp(2.5em, 5vw, 4em);
+  font-size: clamp(2em, 5vw, 4em);
+}
+
+p#help {
+  text-align: center;
 }
 
 #letters button {
@@ -183,4 +188,15 @@ h1 {
   right: 5%;
   padding: 0.3em;
   font-size: 0.25em;
+}
+
+/* media queries */
+
+@media (max-width: 720px) {
+  button#play-again img {
+    width: 1.5em;
+  }
+  p#help {
+    text-align: start;
+  }
 }
